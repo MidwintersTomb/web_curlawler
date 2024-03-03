@@ -4,3 +4,5 @@ Yet another tool to scan a website for directories and files.  It's written in B
 **Usage:** ```./web_curlawler.sh -u https://domain.tld -w /path/to/wordlist.txt -e list,of,extensions```
 
 I've got some weirdness with wordlists that have comment lines at the top.  Some, like the classic dirbuster wordlists, will try to recursively search on # infinitely, like it's not processing the # symbol correctly.  Others, including copying that exact text into a new file, totally fine, ignores it as the code intends.  So if you run into your wordlist trying to recursively search on #, go in and remove the comments from your wordlist.
+
+***Note:*** *Currently passes a user-agent of a Windows 10 machine, with Firefox version 123.  If you want to have a different user agent or remove it all together, go tweak the code.*
