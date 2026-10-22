@@ -68,7 +68,7 @@ check_url() {
 
     local code
 
-    code=$(curl -sL --connect-timeout 3 --max-time 10 -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:123.0) Gecko/20100101 Firefox/123.0" -o /dev/null -w "%{http_code}" "$url")
+    code=$(curl -skL --connect-timeout 3 --max-time 10 -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:123.0) Gecko/20100101 Firefox/123.0" -o /dev/null -w "%{http_code}" "$url")
 
     if [[ "$code" =~ ^(200|204|301|302|307|308|401|403)$ ]]; then
         print_result "$url" "$code"
